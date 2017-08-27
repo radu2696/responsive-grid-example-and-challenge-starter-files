@@ -1,3 +1,7 @@
+/*when box sizing is set to border-box, any explicit width settings are guarantees that the
+ element will take up no more than that width. If we didn't have this setting, our grid would
+  behave unpredictably. */
+
 * {
   box-sizing: border-box;
 }
@@ -20,6 +24,15 @@
   padding-right: 20px;
   margin: 0 auto;
 }
+/*
+The quick explanation of this code is that it accomplishes two objectives. The first ruleset
+ forces the height of each row to expand to the height of its tallest child element. That means 
+ that rows will vertically contain all their content. 
+
+The second ruleset, with clear: both;, is a clearfix, and it ensures that any content that comes 
+after the row will act as though the preceding row was in the normal flow, instead of butting up 
+against the top of the row container.
+ */
 
 /* Clearfix */
 .row::before,
@@ -60,14 +73,16 @@
 
   /* 4 columns */
   .col-4 {
+    width: 33.33%;
   }
 
   /* 6 columns */
   .col-6 {
-
+    width: 50%;
   }
 
   /* 12 columns */
   .col-12 {
+    width: 100%;
   }
 }
